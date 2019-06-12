@@ -1,0 +1,36 @@
+{
+  "name": "fastforward/factories",
+  "description": "A component providing a factory pattern implementation - part of the Fast Forward Components Collection",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Marco Stoll",
+      "email": "marco@fast-forward-encoding.de",
+      "homepage": "http://marcostoll.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "fastforward/utils": "^1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/marcostoll/FF-Utils"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "FF\\Factories\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  }
+}
