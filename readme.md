@@ -89,7 +89,7 @@ An example:
 
     use FF\Factories\ClassLocators\NamespaceClassLocator;
 
-    $myLocator = new NamespaceClassLocator('MyProject\Sub1', ''MyProject\Sub2');
+    $myLocator = new NamespaceClassLocator('MyProject\Sub1', 'MyProject\Sub2');
     
     // This will find MyProject\Sub1\MyClass or MyProject\Sub2\MyClass in this order.
     // If none of the above exist, $class will be null.
@@ -98,6 +98,27 @@ An example:
     // This will find MyProject\Sub1\Foo\MyClass or MyProject\Sub2\Foo\MyClass in this order.
     // If none of the above exist, $class will be null.
     $class = $myLocator->locateClass('Foo\MyClass');
+    
+## The Base Namespace Class Locator
+
+This class locator can be configured with a list of base namespaces and a common suffix ro search for class definitions 
+with a class identifier relative to one of its base namespaces.
+The base namespaces wil be search in the give order. So the locator will return the first match of an existing class.
+
+An example:
+
+    use FF\Factories\ClassLocators\BaseNamespaceClassLocator;
+
+    $commonSuffix = 'Some\Suffix';
+    $myLocator = new NamespaceClassLocator($commonSuffix, MyProject\Sub1', 'MyProject\Sub2');
+    
+    // This will find MyProject\Sub1\Some\Suffix\MyClass or MyProject\Sub2\Some\Suffix\MyClass in this order.
+    // If none of the above exist, $class will be null.
+    $class = $myLocator->locateClass('MyClass');
+    
+    // This will find MyProject\Sub1\Some\Suffix\Foo\MyClass or MyProject\Sub2\Some\Suffix\Foo\MyClass in this order.
+    // If none of the above exist, $class will be null.
+    $class = $myLocator->locateClass('Foo\MyClass');    
     
 ## The Namespace Prefixed Class Locator
 
@@ -111,7 +132,7 @@ An example:
         
         // The first argumens ('Events') is the common class namespace prefix.
         // The following argumentgs are the base namespaces to inspect.
-        $myLocator = new NamespaceClassLocator('Events', MyProject\Sub1', ''MyProject\Sub2');
+        $myLocator = new NamespaceClassLocator('Events', MyProject\Sub1', 'MyProject\Sub2');
         
         // This will find MyProject\Sub1\Events\MyEvent or MyProject\Sub2\Events\MyEven in this order.
         // If none of the above exist, $class will be null.
