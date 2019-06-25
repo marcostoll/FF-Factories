@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - FF\Factories\ClassLocators\BaseNamespaceClassLocator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#FF_Factories_ClassLocators">FF\Factories\ClassLocators</a>
+          </li>
+          <li class="separator">BaseNamespaceClassLocator</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/ClassLocators/BaseNamespaceClassLocator.php.xhtml#line36">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>FF\Factories\ClassLocators\</small>BaseNamespaceClassLocator</h1>
+        <h4>Class BaseNamespaceClassLocator</h4>
+        <p>Expects a class name relative to any of the registered namespaces followed bei the common suffix as class identifier.<br/><br/>Example 1:<br/>Registered namespace: 'MyProject'<br/>$commonSuffix: 'Events'<br/>valid $classIdentifiers:<br/>- 'Error' =&gt; finds MyProject\Events\Error<br/><br/>Example 2:<br/>Registered namespace: 'FF'<br/>$prefix: 'Events'<br/>valid $classIdentifiers:<br/>- 'Runtime\Error' =&gt; finds FF\Events\Runtime\Error<br/><br/>"Going up" in the namespace path by using '..\\' will not work.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class BaseNamespaceClassLocator
+                extends <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator.xhtml">NamespaceClassLocator</a>
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$commonSuffix</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="FF\Factories\ClassLocators\NamespaceClassLocator">NamespaceClassLocator</span></li><li>protected array <a href="#members">$namespaces</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/getCommonSuffix.xhtml">getCommonSuffix</a>()
+                    </li><li>public $this <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/setCommonSuffix.xhtml">setCommonSuffix</a>()
+                    </li><li>protected string <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/buildFqClassName.xhtml">buildFqClassName</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="FF\Factories\ClassLocators\NamespaceClassLocator">NamespaceClassLocator</span></li><li>public void <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/__construct.xhtml">__construct</a>()
+                        </li><li>public string|null <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/locateClass.xhtml">locateClass</a>()
+                        </li><li>public array <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/getNamespaces.xhtml">getNamespaces</a>()
+                        </li><li>public $this <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/setNamespaces.xhtml">setNamespaces</a>()
+                        </li><li>public $this <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/prependNamespaces.xhtml">prependNamespaces</a>()
+                        </li><li>protected string <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/buildFqClassName.xhtml">buildFqClassName</a>()
+                        </li><li>protected void <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/normalizeNamespaces.xhtml">normalizeNamespaces</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator.xhtml">FF\Factories\ClassLocators\NamespaceClassLocator</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="commonSuffix"><strong>$commonSuffix</strong>
+                —
+                string</li>
+            <li id="namespaces"><strong>$namespaces</strong>
+                —
+                array</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="buildFqClassName">
+              <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/buildFqClassName.xhtml">buildFqClassName()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="getCommonSuffix">
+              <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/getCommonSuffix.xhtml">getCommonSuffix()</a>
+            </li>
+            <li id="setCommonSuffix">
+              <a title="FF\Factories\ClassLocators\BaseNamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_BaseNamespaceClassLocator/setCommonSuffix.xhtml">setCommonSuffix()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator.xhtml">FF\Factories\ClassLocators\NamespaceClassLocator</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="buildFqClassName">
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/buildFqClassName.xhtml">buildFqClassName()</a>
+            </li>
+            <li id="normalizeNamespaces">
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/normalizeNamespaces.xhtml">normalizeNamespaces()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getNamespaces">
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/getNamespaces.xhtml">getNamespaces()</a>
+            </li>
+            <li id="locateClass"><a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/locateClass.xhtml">locateClass()</a>
+                — Locates a full-qualified class name using the given identifier</li>
+            <li id="prependNamespaces">
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/prependNamespaces.xhtml">prependNamespaces()</a>
+            </li>
+            <li id="setNamespaces">
+              <a title="FF\Factories\ClassLocators\NamespaceClassLocator" href="../classes/FF_Factories_ClassLocators_NamespaceClassLocator/setNamespaces.xhtml">setNamespaces()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2019-06-21T09:51:04+02:00 (commit #<span title="f2d5348833fb34ba5f4db7d36df960f6d3defa74">f2d5348</span>)</h3>
+            <div>
+              <p>
+                        Author: Marco Stoll (marco.stoll@rocketmail.com) /
+                        Commiter: Marco Stoll (marco.stoll@rocketmail.com)
+                    </p>
+              <pre class="wrapped">[FEATURE] add base ns class locator</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0-dev - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>
