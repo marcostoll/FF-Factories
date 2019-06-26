@@ -60,7 +60,9 @@ class NamespaceClassLocator implements ClassLocatorInterface
     {
         foreach ($this->namespaces as $ns) {
             $fqClassname = $this->buildFqClassName($ns, $classIdentifier);
-            if (!class_exists($fqClassname)) continue;
+            if (!class_exists($fqClassname)) {
+                continue;
+            }
 
             return $fqClassname;
         }
