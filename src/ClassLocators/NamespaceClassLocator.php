@@ -101,13 +101,13 @@ class NamespaceClassLocator implements ClassLocatorInterface
     }
 
     /**
-     * @param string $ns
+     * @param string $namespace
      * @param string $classIdentifier
      * @return string
      */
-    protected function buildFqClassName(string $ns, string $classIdentifier): string
+    protected function buildFqClassName(string $namespace, string $classIdentifier): string
     {
-        return $ns . '\\' . $classIdentifier;
+        return $namespace . '\\' . $classIdentifier;
     }
 
     /**

@@ -69,16 +69,16 @@ class NamespacePrefixedClassLocator extends NamespaceClassLocator
     }
 
     /**
-     * @param string $ns
+     * @param string $namespace
      * @param string $classIdentifier
      * @return string
      */
-    protected function buildFqClassName(string $ns, string $classIdentifier): string
+    protected function buildFqClassName(string $namespace, string $classIdentifier): string
     {
         $classPath = explode('\\', ClassUtils::normalizeNamespace($classIdentifier));
         $localClassName = array_pop($classPath);
-        $subNs = !empty($classPath) ? implode('\\', $classPath) . '\\' : '';
+        $subNamespace = !empty($classPath) ? implode('\\', $classPath) . '\\' : '';
 
-        return $ns . '\\' . $subNs . $this->prefix . '\\' . $localClassName;
+        return $namespace . '\\' . $subNamespace . $this->prefix . '\\' . $localClassName;
     }
 }

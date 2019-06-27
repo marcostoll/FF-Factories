@@ -69,12 +69,12 @@ class BaseNamespaceClassLocator extends NamespaceClassLocator
     }
 
     /**
-     * @param string $ns
+     * @param string $namespace
      * @param string $classIdentifier
      * @return string
      */
-    protected function buildFqClassName(string $ns, string $classIdentifier): string
+    protected function buildFqClassName(string $namespace, string $classIdentifier): string
     {
-        return parent::buildFqClassName($ns . '\\' . $this->commonSuffix, $classIdentifier);
+        return parent::buildFqClassName($namespace . '\\' . $this->commonSuffix, $classIdentifier);
     }
 }
