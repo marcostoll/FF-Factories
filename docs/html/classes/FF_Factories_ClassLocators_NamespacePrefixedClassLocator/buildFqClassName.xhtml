@@ -80,14 +80,14 @@
         <h2 id="signature">Signature</h2>
         <div class="styled synopsis">
           <code>protected function buildFqClassName(string
-        $ns,
+        $namespace,
             string
         $classIdentifier )
             </code>
         </div>
         <h2 id="parameterlist">Parameters</h2>
         <dl class="styled">
-          <dt><code>$ns</code>
+          <dt><code>$namespace</code>
                 —
                 string</dt>
           <dd/>
@@ -117,6 +117,26 @@
             <li>Tests: 0</li>
             <li>Passed: 0 (0%)</li>
           </ul>
+        </div>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">78</td>
+              <td>
+                <a href="http://phpmd.org/rules/cleancode.html#staticaccess" target="_blank" title="Clean Code Rules">StaticAccess</a>
+              </td>
+              <td>Avoid using static access to class '\FF\Utils\ClassUtils' in method 'buildFqClassName'.</td>
+            </tr>
+          </table>
         </div>
       </section>
     </div>

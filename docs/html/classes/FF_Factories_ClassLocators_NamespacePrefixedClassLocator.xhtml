@@ -59,6 +59,9 @@
             <a href="#coverage">Coverage</a>
           </li>
           <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
             <a href="#members">Members</a>
           </li>
           <li>
@@ -118,6 +121,33 @@
             <td class="nummeric"> / </td>
           </tr>
         </table>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">67</td>
+              <td>
+                <a href="http://phpmd.org/rules/cleancode.html#staticaccess" target="_blank" title="Clean Code Rules">StaticAccess</a>
+              </td>
+              <td>Avoid using static access to class '\FF\Utils\ClassUtils' in method 'setPrefix'.</td>
+            </tr>
+            <tr>
+              <td class="line">78</td>
+              <td>
+                <a href="http://phpmd.org/rules/cleancode.html#staticaccess" target="_blank" title="Clean Code Rules">StaticAccess</a>
+              </td>
+              <td>Avoid using static access to class '\FF\Utils\ClassUtils' in method 'buildFqClassName'.</td>
+            </tr>
+          </table>
+        </div>
         <h2 id="members">Members</h2>
         <div class="styled members">
           <h4>protected</h4>
@@ -177,6 +207,16 @@
         </div>
         <h2 id="history">History</h2>
         <ul class="styled history">
+          <li>
+            <h3>2019-06-27T09:36:19+02:00 (commit #<span title="0fbf9a553b09f782b98fbbeec739229b1d9e157b">0fbf9a5</span>)</h3>
+            <div>
+              <p>
+                        Author: Marco Stoll (marco.stoll@rocketmail.com) /
+                        Commiter: Marco Stoll (marco.stoll@rocketmail.com)
+                    </p>
+              <pre class="wrapped">[FEATURE] add phpmd</pre>
+            </div>
+          </li>
           <li>
             <h3>2019-06-26T11:45:44+02:00 (commit #<span title="ca2eea08e396dc5aca6870576469f0b74ee12de7">ca2eea0</span>)</h3>
             <div>
