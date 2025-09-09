@@ -20,7 +20,7 @@ abstract class AbstractSingletonFactory extends AbstractFactory
     /**
      * @var array
      */
-    protected $instanceCache = [];
+    protected array $instanceCache = [];
 
     /**
      * {@inheritdoc}
@@ -28,7 +28,7 @@ abstract class AbstractSingletonFactory extends AbstractFactory
      * Successfully created instances will be stored within the instance cache using their $classIdentifier as key.
      * Retrieves the object from the instance cache if already present. If not, attempts to create it.
      */
-    public function create(string $classIdentifier, ...$args)
+    public function create(string $classIdentifier, ...$args): object
     {
         // check instance cache first
         if (isset($this->instanceCache[$classIdentifier])) {
@@ -46,7 +46,7 @@ abstract class AbstractSingletonFactory extends AbstractFactory
      *
      * @return $this
      */
-    public function clearInstanceCache()
+    public function clearInstanceCache(): self
     {
         $this->instanceCache = [];
         return $this;
