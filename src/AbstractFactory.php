@@ -24,7 +24,7 @@ abstract class AbstractFactory
     /**
      * @var ClassLocatorInterface
      */
-    protected $classLocator;
+    protected ClassLocatorInterface $classLocator;
 
     /**
      * @param ClassLocatorInterface $classLocator
@@ -46,7 +46,7 @@ abstract class AbstractFactory
      * @throws ClassNotFoundException no suitable class definition found
      * @throws InstantiationException error while trying to instantiate object
      */
-    public function create(string $classIdentifier, ...$args)
+    public function create(string $classIdentifier, ...$args): object
     {
         $fqClassName = $this->classLocator->locateClass($classIdentifier);
         if (is_null($fqClassName)) {
@@ -74,9 +74,9 @@ abstract class AbstractFactory
 
     /**
      * @param ClassLocatorInterface $classLocator
-     * @return AbstractFactory
+     * @return $this
      */
-    public function setClassLocator(ClassLocatorInterface $classLocator)
+    public function setClassLocator(ClassLocatorInterface $classLocator): self
     {
         $this->classLocator = $classLocator;
         return $this;

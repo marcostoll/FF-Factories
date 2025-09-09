@@ -38,7 +38,7 @@ class NamespaceClassLocator implements ClassLocatorInterface
     /**
      * @var string[]
      */
-    protected $namespaces = [];
+    protected array $namespaces = [];
 
     /**
      * @param string[] $namespaces
@@ -82,7 +82,7 @@ class NamespaceClassLocator implements ClassLocatorInterface
      * @param array $namespaces
      * @return $this
      */
-    public function setNamespaces(array $namespaces)
+    public function setNamespaces(array $namespaces): self
     {
         $this->normalizeNamespaces($namespaces);
         $this->namespaces = $namespaces;
@@ -93,7 +93,7 @@ class NamespaceClassLocator implements ClassLocatorInterface
      * @param string[] $namespaces
      * @return $this
      */
-    public function prependNamespaces(string ...$namespaces)
+    public function prependNamespaces(string ...$namespaces): self
     {
         $this->normalizeNamespaces($namespaces);
         $this->namespaces = array_merge($namespaces, $this->namespaces);
@@ -113,7 +113,7 @@ class NamespaceClassLocator implements ClassLocatorInterface
     /**
      * @param array $namespaces
      */
-    protected function normalizeNamespaces(array &$namespaces)
+    protected function normalizeNamespaces(array &$namespaces): void
     {
         array_walk($namespaces, [ClassUtils::class, 'normalizeNamespace']);
     }

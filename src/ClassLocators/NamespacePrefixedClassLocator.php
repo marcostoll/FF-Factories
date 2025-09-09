@@ -38,7 +38,7 @@ class NamespacePrefixedClassLocator extends NamespaceClassLocator
     /**
      * @var string
      */
-    protected $prefix;
+    protected string $prefix;
 
     /**
      * @param string $prefix
@@ -62,7 +62,7 @@ class NamespacePrefixedClassLocator extends NamespaceClassLocator
      * @param string $prefix
      * @return $this
      */
-    public function setPrefix(string $prefix)
+    public function setPrefix(string $prefix): self
     {
         $this->prefix = ClassUtils::normalizeNamespace($prefix);
         return $this;

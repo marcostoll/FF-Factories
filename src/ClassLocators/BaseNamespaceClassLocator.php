@@ -38,7 +38,7 @@ class BaseNamespaceClassLocator extends NamespaceClassLocator
     /**
      * @var string
      */
-    protected $commonSuffix;
+    protected string $commonSuffix;
 
     /**
      * @param string $commonSuffix
@@ -62,7 +62,7 @@ class BaseNamespaceClassLocator extends NamespaceClassLocator
      * @param string $commonSuffix
      * @return $this
      */
-    public function setCommonSuffix(string $commonSuffix)
+    public function setCommonSuffix(string $commonSuffix): self
     {
         $this->commonSuffix = ClassUtils::normalizeNamespace($commonSuffix);
         return $this;
